@@ -1,0 +1,31 @@
+Create a new venv:
+python -m venv /path/to/new/virtual/environment
+  check that the permissions on that folder and contents is good for installing pip (not root owner:group)
+pip install django
+django-admin startproject projectname
+  drop down into the project folder and..
+python manage.py runserver
+python manage.py startapp menu
+  edit the models.py file to define what data we want to store in the database
+  create a class there that inherits (models.Model)
+  create the class attributes like models.CharField 
+  or models.FloatField or models.BooleanField etc. with their max_length or default=0 values respectively
+
+  in the projectname/settings.py add menu.apps.TheClassName to the INSTALLED_APPS array (TheClassName is in apps.py)
+python manage.py makemigrations
+  (this creates a migrations file in the folder /migrations)
+  then to apply the migrations... (adds them to the database)
+python manage.py migrate
+  download sqlLite browser
+
+sudo apt install sqlite3
+sudo apt install sqlitebrowser
+  open the db.sqlite3 file in the project folder
+
+python manage.py createsuperuser
+  enter the name, email, password
+
+  in the /app/admin.py file, import the model
+from .models import Pizza
+admin.site.register(Pizza)
+

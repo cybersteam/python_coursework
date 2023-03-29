@@ -1,0 +1,37 @@
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Index Page</title>
+        <link rel="stylesheet" href="{% static '/menu/style.css' %}">
+
+    </head>
+    <body>
+        <img id="small_logo" src="{% static '/menu/images/cyber.png' %}"/>
+        <h1> Our Pizza</h1>
+        <ul>
+            {% for pizza in pizzas %}
+            <!-- the double curly brackets syntax will convert the price float to string to display..-->
+            <li>{{pizza.name}} - €{{pizza.price | floatformat:2}} - 
+                <div>
+                    {{pizza.ingredients}}
+                </div>
+                <div>
+                    {% if pizza.vegetarian %}
+                        <span>Vegetarian*</span>
+                    {% endif %}
+                </div>
+                <div>
+                    {% if pizza.glutenfree %}
+                        <span>Gluten Free!*</span>
+                    {% endif %}
+                </div>
+
+            </li>
+
+            {% endfor %}
+        </ul>
+    </body>
+</html>

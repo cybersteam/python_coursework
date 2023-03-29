@@ -1,0 +1,22 @@
+h1 {    
+    color: blue;
+
+}
+
+body {
+    background: url("images/plate.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:green;
+
+}
+
+
+
+#small_logo {
+    margin: 50 0 0 35;
+    width: 100px;
+    height: 100px;
+}

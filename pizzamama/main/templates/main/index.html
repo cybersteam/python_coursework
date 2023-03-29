@@ -1,0 +1,15 @@
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Index Page</title>
+        <link rel="stylesheet" href="{% static '/main/style.css' %}">
+
+    </head>
+    <body>
+        <img id="small_logo" src="{% static '/main/images/cyber.png' %}"/>
+        <a href="{% url 'menu:index' %}">THIS IS A LINK</a>
+    </body>
+</html>
